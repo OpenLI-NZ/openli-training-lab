@@ -1,0 +1,15 @@
+clientport: <COLLECTORPORT>
+clientaddr: <PROVIP>
+updateport: <RESTAPIPORT>
+updateaddr: <PROVIP>
+mediationport: <MEDIATORPORT>
+mediationaddr: <PROVIP>
+
+intercept-config-file: /etc/openli/running-intercept-config.yaml
+
+#tlscert: <TLSCERT>
+#tlskey: <TLSKEY>
+#tlsca: <TLSCA>
+
+#restauthdb: /var/lib/openli/provauth.db
+#restauthkey: <RESTAUTHKEY>

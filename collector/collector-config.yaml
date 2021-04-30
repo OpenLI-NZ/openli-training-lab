@@ -1,0 +1,28 @@
+operatorid: <OPID>
+networkelementid: openli-lab
+interceptpointid: col001
+
+encoding: der
+encoderthreads: 2
+
+inputs:
+  - uri: eth1
+    threads: 2
+    hasher: radius
+    #filter:
+
+etsitls: no
+
+provisioneraddr: <PROVIP>
+provisionerport: <COLLECTORPORT>
+
+RMQenabled: false
+#RMQname: <RMQNAME>
+#RMQpass: <RMQPASSWORD>
+
+#tlscert: <TLSCERT>
+#tlskey: <TLSKEY>
+#tlsca: <TLSCA>
+
+#alumirrors: []
+#jmirrors: []

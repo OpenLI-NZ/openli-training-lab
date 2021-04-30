@@ -1,0 +1,21 @@
+operatorid: <OPID>
+
+listenport: <MEDLISTENPORT>
+listenaddr: <MEDIP>
+
+provisioneraddr: <PROVIP>
+provisionerport: <MEDIATORPORT>
+
+mediatorid: <MEDIDNUM>
+
+etsitls: no
+
+#tlscert: <TLSCERT>
+#tlskey: <TLSKEY>
+#tlsca: <TLSCA>
+
+RMQenabled: false
+#RMQName: <RMQNAME>
+#RMQpass: <RMQPASSWORD>
+#RMQSSL: false
+#RMQheartbeatfreq: 30
