@@ -31,4 +31,7 @@ COPY intercept-config.yaml /etc/openli/running-intercept-config.yaml
 RUN chown openli:openli /etc/openli/*.yaml
 COPY entrypoint.sh /entrypoint.sh
 
+COPY stop_provisioner.sh /usr/sbin/
+COPY stop_rsyslog.sh /usr/sbin/
+
 ENTRYPOINT ["/entrypoint.sh"]

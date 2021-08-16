@@ -29,6 +29,9 @@ RUN sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
 COPY mediator-config.yaml /etc/openli/
 COPY entrypoint.sh /entrypoint.sh
 
+COPY stop_rsyslog.sh /usr/sbin/
+COPY stop_mediator.sh /usr/sbin/
+
 RUN chown openli:openli /etc/openli/*.yaml
 
 ENTRYPOINT ["/entrypoint.sh"]

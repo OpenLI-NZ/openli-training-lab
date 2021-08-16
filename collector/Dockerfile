@@ -34,5 +34,7 @@ COPY openli-lab-pcaps.tar.gz /home/openli-coll/pcaps/
 RUN cd pcaps && tar -xvzf openli-lab-pcaps.tar.gz && rm openli-lab-pcaps.tar.gz
 
 COPY README /home/openli-coll
+COPY stop_rsyslog.sh /usr/sbin
+COPY stop_collector.sh /usr/sbin
 
 ENTRYPOINT ["/entrypoint.sh"]
