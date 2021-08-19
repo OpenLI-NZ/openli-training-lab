@@ -6,7 +6,7 @@ encoding: der
 encoderthreads: 2
 
 inputs:
-  - uri: eth1
+  - uri: eth2
     threads: 2
     hasher: radius
     #filter:
