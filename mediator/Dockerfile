@@ -29,6 +29,15 @@ RUN sed -i '/imklog/s/^/#/' /etc/rsyslog.conf
 COPY mediator-config.yaml /etc/openli/
 COPY entrypoint.sh /entrypoint.sh
 
+RUN mkdir /etc/openli/ssl
+COPY ca-crt.pem /etc/openli/ssl/
+COPY mediator-crt.pem /etc/openli/ssl/
+COPY mediator-key.pem /etc/openli/ssl/
+
+RUN chown openli:openli /etc/openli/ssl/*.pem
+RUN chmod 644 /etc/openli/ssl/*-crt.pem
+RUN chmod 600 /etc/openli/ssl/*-key.pem
+
 COPY stop_rsyslog.sh /usr/sbin/
 COPY stop_mediator.sh /usr/sbin/
 

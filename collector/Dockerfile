@@ -33,8 +33,20 @@ RUN mkdir /home/openli-coll/pcaps/
 COPY openli-lab-pcaps.tar.gz /home/openli-coll/pcaps/
 RUN cd pcaps && tar -xvzf openli-lab-pcaps.tar.gz && rm openli-lab-pcaps.tar.gz
 
+RUN mkdir /etc/openli/ssl
+COPY ca-crt.pem /etc/openli/ssl/
+COPY collector-crt.pem /etc/openli/ssl/
+COPY collector-key.pem /etc/openli/ssl/
+
+RUN chmod 644 /etc/openli/ssl/*-crt.pem
+RUN chmod 600 /etc/openli/ssl/*-key.pem
+
+RUN chown rabbitmq:rabbitmq /etc/openli/ssl/*.pem
+
+COPY rabbitmq.conf /home/openli-coll
 COPY README /home/openli-coll
 COPY stop_rsyslog.sh /usr/sbin
 COPY stop_collector.sh /usr/sbin
+COPY stop_rabbitmq.sh /usr/sbin
 
 ENTRYPOINT ["/entrypoint.sh"]
