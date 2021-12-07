@@ -2,7 +2,6 @@ operatorid: <OPID>
 networkelementid: openli-lab
 interceptpointid: col001
 
-encoding: der
 encoderthreads: 2
 
 inputs:

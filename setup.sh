@@ -39,10 +39,6 @@ fi
 
 echo "All done!"
 
-echo "Downloading docker images..."
-# docker pull openlinz/openli-lab-agency
-echo "Images downloaded!"
-
 echo "Starting docker containers..."
 docker run -d -P --rm -it --name openli-agency openli/training:openli-lab-agency
 

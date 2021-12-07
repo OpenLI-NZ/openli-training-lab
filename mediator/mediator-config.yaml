@@ -15,7 +15,7 @@ etsitls: no
 #tlsca: <TLSCA>
 
 RMQenabled: false
-#RMQName: <RMQNAME>
+#RMQname: <RMQNAME>
 #RMQpass: <RMQPASSWORD>
 #RMQSSL: false
 #RMQheartbeatfreq: 30
