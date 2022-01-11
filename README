@@ -1,0 +1,44 @@
+The OpenLI Training Lab
+=======================
+
+This is a set of docker containers that should be used in conjunction with
+the OpenLI Tutorial (https://github.com/wanduow/openli/wiki/OpenLI-Tutorial)
+to learn how to configure and perform lawful intercepts using the OpenLI
+software.
+
+Instructions
+------------
+
+Install Docker for Linux on your intended host machine:
+
+ * https://docs.docker.com/engine/install/
+ * https://docs.docker.com/engine/install/linux-postinstall/
+
+Make sure your current user has permissions to start docker containers.
+
+Run the ./setup.sh script to create the lab environment.
+
+You will now have four containers running on your host:
+ * openli-agency
+ * openli-collector
+ * openli-provisioner
+ * openli-mediator
+
+Log into to any one of these containers using the following command:
+
+    docker exec -i -t <container name> /bin/bash
+
+Stop a container using the following command (note that any local changes
+on that container, e.g. configuration you have changed, will be lost):
+
+    docker stop <container name>
+
+Running ./setup.sh again will stop and re-create all of the OpenLI containers
+(again, losing any local changes you had made).
+
+
+Contact
+-------
+
+Any questions or comments about the OpenLI training lab should be directed
+to openli-support@waikato.ac.nz
