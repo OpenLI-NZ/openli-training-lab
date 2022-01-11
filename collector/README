@@ -1,2 +1,44 @@
 Instructions for running the OpenLI lab traffic generator
 =========================================================
+
+The OpenLI lab environment allows you to upload pcaps into the lab to
+experiment with, just like the pcaps that are provided with the
+collector container image. This means you can practice configuring OpenLI
+to intercept traffic from your own network using the lab containers.
+
+Instructions for uploading a pcap file and replaying the traffic into
+the lab collector are given below.
+
+----
+
+1. Upload a pcap containing the traffic that you want to replay
+   into the running openli-collector container.
+
+   You can do this by running `docker cp` on the container host, e.g.
+
+       docker cp <yourpcap> openli-collector:/home/openli-coll/pcaps/
+
+2. Add appropriate intercept configuration to the provisioner
+   using the REST API. This could include:
+
+    * SIP server details if your pcap contains VoIP traffic
+    * RADIUS server details if your pcap contains RADIUS traffic
+    * Adding an intercept (IP or VoIP)
+
+   See lessons 11 - 16 of the OpenLI tutorial for more information if
+   you are not sure how to do this.
+
+3. If your pcap contains vendor-mirrored traffic (e.g. Jmirror), then
+   you'll also need to add details about the mirroring to the OpenLI
+   collector configuration in /etc/openli/collector-config.yaml on the
+   collector container. Restart the collector service when you're done
+   to apply the new configuration.
+
+   See lesson 17 of the OpenLI tutorial for more details on this step.
+
+4. You can now replay your traffic into the openli collector using tracereplay:
+
+      tracereplay /home/openli-coll/pcaps/<yourpcap> ring:eth2
+
+   To increase the replay speed, add a `-X <speed factor>` argument when you
+   run tracereplay, e.g. `-X 2` will replay the pcap at double speed.
