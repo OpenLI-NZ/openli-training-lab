@@ -40,13 +40,13 @@ fi
 echo "All done!"
 
 echo "Starting docker containers..."
-docker run -d -P --rm -it --name openli-agency openli/training:openli-lab-agency
+docker run -d -P --rm -it --name openli-agency quay.io/openli/training:openli-lab-agency
 
-docker run -d -P --rm -it --name openli-provisioner  openli/training:openli-lab-provisioner
+docker run -d -P --rm -it --name openli-provisioner  quay.io/openli/training:openli-lab-provisioner
 
-docker run -d -P --rm -it --name openli-mediator openli/training:openli-lab-mediator
+docker run -d -P --rm -it --name openli-mediator quay.io/openli/training:openli-lab-mediator
 
-docker run -d -P --rm -it --name openli-collector openli/training:openli-lab-collector
+docker run -d -P --rm -it --name openli-collector quay.io/openli/training:openli-lab-collector
 
 
 docker network connect openli-lab openli-provisioner
