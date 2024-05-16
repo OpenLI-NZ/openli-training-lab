@@ -2,7 +2,7 @@ The OpenLI Training Lab
 =======================
 
 This is a set of docker containers that should be used in conjunction with
-the OpenLI Tutorial (https://github.com/wanduow/openli/wiki/OpenLI-Tutorial)
+the OpenLI Tutorial (https://github.com/OpenLI-NZ/openli/wiki/OpenLI-Tutorial)
 to learn how to configure and perform lawful intercepts using the OpenLI
 software.
 
